@@ -10,11 +10,14 @@ import (
 // image. E.g. Greater than 256
 var ErrTooManyColors = fmt.Errorf("too many colors for palette")
 
-// ImageToPaletted losslessly converte an image.Image to an image.Paletted
+// ImageToPaletted losslessly converts an image.Image to an image.Paletted
 // if possible.
 //
 // If the passed image.Image already is an image.Paletted it will be returned
 // as is without modification.
+//
+// If the passed image.Image contains more than 256 colors a ErrTooManyColors
+// will be returned
 func ImageToPaletted(img image.Image) (*image.Paletted, error) {
 	if pal, ok := img.(*image.Paletted); ok {
 		return pal, nil
