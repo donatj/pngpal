@@ -9,6 +9,10 @@ import (
 	"github.com/donatj/pngpal"
 )
 
+var (
+	force = flag.Bool("f", false, "force re-encode of existing paletted images")
+)
+
 func init() {
 	flag.Parse()
 
@@ -38,7 +42,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	if img2 == img {
+	if !*force && img2 == img {
 		os.Stderr.WriteString("image already paletted, left unmodified\n")
 		os.Exit(0)
 	}
