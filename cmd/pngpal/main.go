@@ -49,5 +49,8 @@ func main() {
 	}
 	defer save.Close()
 
-	png.Encode(save, img2)
+	err = png.Encode(save, img2)
+	if err != nil {
+		log.Fatal(err)
+	}
 }
