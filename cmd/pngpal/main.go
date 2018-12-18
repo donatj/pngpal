@@ -38,6 +38,11 @@ func main() {
 		log.Fatal(err)
 	}
 
+	if img2 == img {
+		os.Stderr.WriteString("image already paletted, left unmodified\n")
+		os.Exit(0)
+	}
+
 	save, err := os.Create(path)
 	if err != nil {
 		log.Fatal(err)
