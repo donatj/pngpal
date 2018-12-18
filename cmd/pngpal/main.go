@@ -33,7 +33,10 @@ func main() {
 	}
 	file.Close()
 
-	img2, _ := pngpal.ImageToPaletted(img)
+	img2, err := pngpal.ImageToPaletted(img)
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	save, err := os.Create(path)
 	if err != nil {
