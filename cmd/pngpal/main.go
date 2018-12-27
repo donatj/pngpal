@@ -27,19 +27,19 @@ func main() {
 
 	file, err := os.Open(path)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, " - ", path)
 	}
 	defer file.Close()
 
 	img, err := png.Decode(file)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, " - ", path)
 	}
 	file.Close()
 
 	img2, err := pngpal.ImageToPaletted(img)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, " - ", path)
 	}
 
 	if !*force && img2 == img {
@@ -49,12 +49,12 @@ func main() {
 
 	save, err := os.Create(path)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, " - ", path)
 	}
 	defer save.Close()
 
 	err = png.Encode(save, img2)
 	if err != nil {
-		log.Fatal(err)
+		log.Fatal(err, " - ", path)
 	}
 }
