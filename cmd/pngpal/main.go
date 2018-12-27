@@ -10,7 +10,8 @@ import (
 )
 
 var (
-	force = flag.Bool("f", false, "force re-encode of existing paletted images")
+	force  = flag.Bool("f", false, "force re-encode of existing paletted images")
+	output = flag.String("o", "", "output path - if not specified, passed file will be replaced")
 )
 
 func init() {
@@ -47,14 +48,19 @@ func main() {
 		os.Exit(0)
 	}
 
-	save, err := os.Create(path)
+	opath := path
+	if *output != "" {
+		opath = *output
+	}
+
+	save, err := os.Create(opath)
 	if err != nil {
-		log.Fatal(err, " - ", path)
+		log.Fatal(err, " - ", opath)
 	}
 	defer save.Close()
 
 	err = png.Encode(save, img2)
 	if err != nil {
-		log.Fatal(err, " - ", path)
+		log.Fatal(err, " - ", opath)
 	}
 }
