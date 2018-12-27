@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/donatj/pngpal.svg?branch=master)](https://travis-ci.org/donatj/pngpal)
 
 Friendly command line tool to *losslessly* convert a PNG to a palleted PNG
-if possible.
+if possible. It simply rejects images if it cannot be done losslessly.
 
 Also usable as a library to convert images in general to paletted images.
 
@@ -15,6 +15,17 @@ Also usable as a library to convert images in general to paletted images.
 |------------------------------------|----------------------------------| 
 | ![PNG-24 Cat](examples/cat-24.png) | ![PNG-8 Cat](examples/cat-8.png) | 
 | 21kb                               | 9kb                              | 
+
+
+## Usage
+
+```bash
+# Replace PNG in-place
+$ pngpal file.png
+
+# Save to new file
+$ pngpal -o new.png old.png
+```
 
 ## Installation
 
