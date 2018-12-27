@@ -1,2 +1,4 @@
 *.png
 !examples/cat*
+
+/release
