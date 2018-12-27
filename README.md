@@ -4,12 +4,23 @@
 [![GoDoc](https://godoc.org/github.com/donatj/pngpal?status.svg)](https://godoc.org/github.com/donatj/pngpal)
 [![Build Status](https://travis-ci.org/donatj/pngpal.svg?branch=master)](https://travis-ci.org/donatj/pngpal)
 
-Friendly command line tool to losslessly convert a PNG to a palleted PNG
+Friendly command line tool to *losslessly* convert a PNG to a palleted PNG
 if possible.
 
 Also usable as a library to convert images in general to paletted images.
 
+## Examples
+
+| PNG-24                             | PNG-8 (Palleted)                 | 
+|------------------------------------|----------------------------------| 
+| ![PNG-24 Cat](examples/cat-24.png) | ![PNG-8 Cat](examples/cat-8.png) | 
+| 21kb                               | 9kb                              | 
+
 ## Installation
+
+### Binaries
+
+See: [Releases](https://github.com/donatj/pngpal/releases).
 
 ### From Source
 
