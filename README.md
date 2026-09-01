@@ -1,6 +1,5 @@
 # pngpal
 
-[![Go Report Card](https://goreportcard.com/badge/github.com/donatj/pngpal)](https://goreportcard.com/report/github.com/donatj/pngpal)
 [![CI](https://github.com/donatj/pngpal/actions/workflows/ci.yml/badge.svg)](https://github.com/donatj/pngpal/actions/workflows/ci.yml)
 [![GoDoc](https://godoc.org/github.com/donatj/pngpal?status.svg)](https://godoc.org/github.com/donatj/pngpal)
 
